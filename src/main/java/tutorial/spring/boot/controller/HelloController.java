@@ -2,14 +2,20 @@ package tutorial.spring.boot.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
-@RequestMapping("/helloController")
+@RequestMapping("/hello")
 public class HelloController {
 
-	@RequestMapping("/")
-	public String index() {
-		return "Greetings from Spring Boot!";
+	@RequestMapping(method = RequestMethod.GET,value ="/test")
+	public String get() {
+		return "get!";
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT,value ="/test")
+	public String put() {
+		return "put!";
 	}
 
 }
